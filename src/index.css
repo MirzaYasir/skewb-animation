@@ -1,0 +1,127 @@
+@font-face {
+  font-family: 'Poppins';
+  src: url('../fonts/Poppins/Poppins-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Poppins';
+  src: url('../fonts/Poppins/Poppins-Light.ttf') format('truetype');
+  font-weight: 300;
+  /* Set the font weight to 300 for the light variant */
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Poppins';
+  src: url('../fonts/Poppins/Poppins-ExtraLight.ttf') format('truetype');
+  font-weight: 100;
+  /* Set the font weight to 300 for the light variant */
+  font-style: normal;
+}
+
+
+body {
+  margin: 0;
+  font-family: 'Poppins' !important;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.skewed-div-container {
+  overflow: hidden;
+  width: 100%;
+  height: 200px;
+  /* Hide the overflow to maintain the shape */
+}
+
+.skewed-div {
+  transform: skewY(-5deg);
+  /* Adjust the skew angle as needed */
+  transform-origin: top left;
+  /* This defines the point from which the transformation should start */
+  margin-bottom: -50px;
+  /* You may need to adjust margin to overlap the skewed area */
+  background-color: red;
+}
+
+.skewed-image {
+  position: absolute;
+  top: 30px;
+  /* Adjust as needed */
+  left: 25px;
+  /* Adjust as needed */
+  z-index: 1;
+  transform: skew(-10deg);
+  /* Skew the image */
+  transform-origin: bottom left;
+  /* Set the origin of the transformation */
+  border-radius: 20px;
+  /* Add rounded corners as seen in image-2 */
+  overflow: hidden;
+  /* Ensure the contents follow the skew */
+}
+
+@keyframes bounceIn {
+  0% {
+    transform: scale(0.1);
+    opacity: 0;
+  }
+
+  60% {
+    transform: scale(1.2);
+    opacity: 1;
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+.overlay-content {
+  animation: bounceIn 0.9s ease;
+}
+
+.offcanvas {
+  z-index: 100;
+  position: fixed;
+  top: 0;
+  right: -350px; /* Start off-screen */
+  width: 350px;
+  height: 100vh;
+  background-color: rgb(255, 255, 255, 0.5);
+  transition: right 0.3s ease;
+}
+
+.offcanvas.open {
+  right: 0; /* Move on-screen */
+}
+
+.menu {
+  padding: 20px;
+}
+
+.menu ul {
+  list-style: none;
+  padding: 0;
+}
+
+.menu li {
+  padding: 10px 0;
+  color: #fff;
+  cursor: pointer;
+  font-weight: 100;
+}
+
+.toggle-button {
+  position: fixed;
+  top: 10px;
+  right: 10px; /* Adjust to right side */
+  z-index: 999;
+  background-color: transparent;
+  color: #fff;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+}
