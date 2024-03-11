@@ -7,7 +7,7 @@ import { RiGridFill } from "react-icons/ri";
 import RightSidebar from "./right-sidebar";
 
 const ZoomAndSlide = () => {
-    const paragraph = "passion agility integrity the skewb experience citizenship partners passion agility integrity the skewb experience citizenship partners passion agility integrity the skewb experience citizenship partners";
+    const paragraph = "passion agility integrity the skewb experience citizenship partners passion agility integrity the skewb experience citizenship partners passion agility integrity the skewb experience citizenship partners agility integrity the skewb experience citizenship partners";
     const [isBtnClicked, setIsBtnClicked] = useState(false);
     const [isOpen, setIsOpen] = useState(false);
     const [osContent, setOsContent] = useState(<></>);
@@ -58,24 +58,26 @@ const ZoomAndSlide = () => {
                     transition={{ duration: 10 }}
                 />
 
-                <motion.div
-                    style={{ position: "absolute", top: 0, left: 0 }}
-                    initial={{ opacity: 0, scale: 0.8, x: 0, y: 900 }}
-                    animate={{ opacity: [0, 1, 1, 1, 1, 1], scale: 0.8, x: 0, y: [900, 250, 100, 30, 30, -400] }}
-                    transition={{
-                        duration: 7,
-                        times: [0, 0.45, 0.65, 0.7, 0.95, 1], // Animation keyframes
-                        delay: 4
-                    }}
-                >
-                    <div style={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
-                        <span style={{ color: "white", fontSize: 150, fontWeight: "bold", marginBottom: -50 }}>Welcome to the</span>
-                        <span style={{ color: "white", fontSize: 150, fontWeight: "bold" }}>skewb experience</span>
-                    </div>
-                </motion.div>
+                <div style={{ width: "100%" }}>
+                    <motion.div
+                        style={{ position: "absolute", top: 0, left: 0, width: "100%" }}
+                        initial={{ opacity: 0, scale: 0.8, x: 0, y: 900 }}
+                        animate={{ opacity: [0, 1, 1, 1, 1, 1], scale: 0.8, x: 0, y: [900, 250, 100, 30, 30, -400] }}
+                        transition={{
+                            duration: 7,
+                            times: [0, 0.45, 0.65, 0.7, 0.95, 1], // Animation keyframes
+                            delay: 4
+                        }}
+                    >
+                        <div style={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
+                            <span style={{ color: "white", fontSize: 160, letterSpacing: 5, fontWeight: 600, marginBottom: -50 }}>Welcome to the</span>
+                            <span style={{ color: "white", fontSize: 160, letterSpacing: 5, fontWeight: 600 }}>skewb experience</span>
+                        </div>
+                    </motion.div>
+                </div>
 
                 <motion.div
-                    style={isBtnClicked ? { position: "absolute", top: 150, left: 50 } : { position: "absolute", top: -120, left: 0 }}
+                    style={isBtnClicked ? { position: "absolute", top: 200, left: 50 } : { position: "absolute", top: 50, left: 150 }}
                     initial={{ opacity: 0, scale: 0.2, x: -500, y: 350 }}
                     animate={{ opacity: [0, 0, 0, 1, 1, 1], scale: 0.2, x: -500, y: [400, 350, 350, 200, 200, -200] }}
                     transition={{
@@ -86,21 +88,20 @@ const ZoomAndSlide = () => {
                 >
                     {isBtnClicked ?
                         <div style={{ display: "flex", flexDirection: "column" }}>
-                            <span style={{ color: "white", fontSize: 140, fontWeight: "bold" }}>Enabling sustainable </span>
-                            <span style={{ color: "white", fontSize: 140, fontWeight: "bold" }}>digital transformations</span>
+                            <span style={{ color: "white", fontSize: 140, fontWeight: 500 }}>Enabling sustainable </span>
+                            <span style={{ color: "white", fontSize: 140, fontWeight: 500 }}>digital transformations</span>
                         </div>
-                        : <span style={{ color: "white", fontSize: 150, fontWeight: "bold" }}>Transforming our Energy and Water clients into digital business</span>
+                        :
+                        <div style={{ display: "flex", flexDirection: "column" }}>
+                            <span style={{ color: "white", fontSize: 150, fontWeight: 500 }}>Transforming our</span>
+                            <span style={{ color: "white", fontSize: 150, fontWeight: 500 }}>Energy and Water</span>
+                            <span style={{ color: "white", fontSize: 150, fontWeight: 500 }}>client's into digital</span>
+                            <span style={{ color: "white", fontSize: 150, fontWeight: 500 }}>business</span>
+                        </div>
                     }
                 </motion.div>
 
-                <motion.img
-                    src="assets/image/bottom_border.svg"
-                    style={{ position: "absolute", top: 0, left: 0 }}
-                    alt="Image"
-                    initial={{ opacity: 0, scale: 1, x: 0, y: 900 }}
-                    animate={{ opacity: 1, scale: 1, x: 0, y: [900, 900, 600, 600, 600, 600] }}
-                    transition={{ duration: 3, delay: 1.4 }}
-                />
+                <div style={{ width: "100%", position: "absolute", bottom: -52, backgroundImage: `url("assets/image/bottom_border.svg")`, height: 400, backgroundRepeat: "none", backgroundSize: "cover", left: -9 }}></div>
 
                 <motion.img
                     src="assets/image/Logo02.svg"
@@ -122,7 +123,14 @@ const ZoomAndSlide = () => {
                     style={{ position: "absolute", top: 0, left: 0, zIndex: 1 }} // Ensure zIndex is higher than the text image
                     className="centered-logo"
                     initial={{ opacity: 0, rotate: 19, scale: 0.26, x: 100, y: -260 }}
-                    animate={{ opacity: [0, 1, 1], rotate: [19, 19, 10], scale: [0.26, 0.26, 0.26], x: [100, 100, 550], y: [-260, -260, -260] }}
+                    animate={{
+                        opacity: [0, 1, 1],
+                        rotate: [19, 19, 14], // Adjusted the rotation value
+                        scale: [0.26, 0.26, 0.26],
+                        x: [100, 100, 532], // Changed to translateX value
+                        y: [-260, -260, -260],
+                        z: [0, 0, 0], // Added z translation to match translateZ(0px)
+                    }}
                     transition={{
                         duration: 5,
                         times: [0, 0.1, 0.2],
@@ -138,8 +146,14 @@ const ZoomAndSlide = () => {
                     style={{ position: "absolute", top: 0, left: 0, zIndex: 1 }}
                     className="centered-logo"
                     initial={{ opacity: 0, rotate: 20, scale: 0.2, x: 230, y: -310 }}
-                    animate={{ opacity: [0, 1, 1], rotate: [20, 20, 11], scale: [0.2, 0.2, 0.2], x: [230, 230, 650], y: [-310, -310, -320] }}
-
+                    animate={{
+                        opacity: [0, 1, 1],
+                        rotate: [20, 20, 14], // Adjusted the rotation value
+                        scale: [0.2, 0.2, 0.2],
+                        x: [230, 230, 680], // Changed to translateX value
+                        y: [-310, -310, -335], // Changed to translateY value
+                        z: [0, 0, 0], // Added z translation to match translateZ(0px)
+                    }}
                     transition={{
                         duration: 5, // Duration of the right movement
                         times: [0, 0.1, 0.2], // Animation keyframes
@@ -178,13 +192,13 @@ const ZoomAndSlide = () => {
                     onClick={handleBtnClick}
                     className="centered-logo"
                     style={{ position: "absolute", top: 0, left: 0, zIndex: 1 }}
-                    initial={{ opacity: 0, rotate: 0, scale: 0.08, x: 50, y: -370 }}
+                    initial={{ opacity: 0, rotate: 0, scale: 0.08, x: 50, y: -404 }}
                     animate={{
                         opacity: isBtnClicked ? [1, 1, 1] : [0, 1, 1],
                         rotate: isBtnClicked ? [-9, -9, -9] : [0, 0, -1],
                         scale: isBtnClicked ? [0.08, 0.08, 0.08] : [0.08, 0.08, 0.08],
                         x: isBtnClicked ? [530, 1125, 540] : [80, 80, 530],
-                        y: isBtnClicked ? [-370, -40, -370] : [-390, -390, -370]
+                        y: isBtnClicked ? [-404, -40, -404] : [-390, -390, -404]
                     }}
                     transition={{
                         duration: isBtnClicked ? 3 : 5, // Duration of the right movement
@@ -238,7 +252,7 @@ const ZoomAndSlide = () => {
 
                 <motion.img
                     src="assets/image/OurStoryImage01.jpg"
-                    style={{ position: "absolute", top: 30, left: 25, zIndex: 1 }}
+                    style={{ position: "absolute", top: 30, left: 25, zIndex: 1, borderRadius: 100 }}
                     id="OurStoryImage01"
                     alt="OurStoryImage01"
                     className="centered-logo"
@@ -263,7 +277,7 @@ const ZoomAndSlide = () => {
 
                 <motion.img
                     src="assets/image/OurStoryImage02.jpg"
-                    style={{ position: "absolute", top: 0, left: 0, zIndex: 1 }}
+                    style={{ position: "absolute", top: 0, left: 0, zIndex: 1, borderRadius: 30 }}
                     id="OurStoryImage02"
                     alt="OurStoryImage02"
                     className="centered-logo"
@@ -288,9 +302,9 @@ const ZoomAndSlide = () => {
 
                 <motion.img
                     src="assets/image/OurStoryImage03.jpg"
-                    style={{ position: "absolute", top: 0, left: 0, zIndex: 1 }}
-                    id="OurStoryImage02"
-                    alt="OurStoryImage02"
+                    style={{ position: "absolute", top: 0, left: 0, zIndex: 1, borderRadius: 100 }}
+                    id="OurStoryImage03"
+                    alt="OurStoryImage03"
                     className="centered-logo"
                     initial={{ opacity: 0, rotate: 20, scale: 0.15, x: 500, y: 200 }}
                     animate={{
@@ -317,7 +331,14 @@ const ZoomAndSlide = () => {
                     className="centered-logo"
                     style={{ position: "absolute", top: 0, left: 0, zIndex: 1 }}
                     initial={{ opacity: 0, rotate: 20, scale: 0.19, x: 345, y: -590 }}
-                    animate={{ opacity: [0, 1, 1], rotate: [20, 20, 11], scale: [0.19, 0.19, 0.19], x: [345, 345, 785], y: [-590, -590, -630] }}
+                    animate={{
+                        opacity: [0, 1, 1],
+                        rotate: [20, 20, 15], // Adjusted the rotation value
+                        scale: [0.19, 0.19, 0.19],
+                        x: [345, 345, 830], // Changed to translateX value
+                        y: [-590, -590, -702], // Changed to translateY value
+                        z: [0, 0, 0], // Added z translation to match translateZ(0px)
+                    }}
                     transition={{
                         duration: 5, // Duration of the right movement
                         times: [0, 0.1, 0.2], // Animation keyframes
@@ -354,17 +375,27 @@ const ZoomAndSlide = () => {
                 </motion.div>
             </motion.div>
 
-            <div style={{ position: "absolute", right: 15, bottom: 15 }}>
-                <img src="life-at-skweb.PNG" alt="life-at-skweb" />
-                <img src="cornor-qube.PNG" alt="cornor-qube" />
-            </div>
-
-            {!sideMenuOpen &&
-                <div style={{ position: "absolute", right: 15, top: 15 }} onClick={toggleMenu}>
-                    <RiGridFill color="white" />
+            {isBtnClicked &&
+                <div style={{ position: "absolute", right: 15, bottom: 15, zIndex: 1000 }}>
+                    <img src="life-at-skweb.PNG" alt="life-at-skweb" />
+                    <img src="cornor-qube.PNG" alt="cornor-qube" />
                 </div>
             }
-            
+
+            {!sideMenuOpen &&
+                <>
+                    <div style={{ position: "fixed", right: 15, top: 15 }} onClick={toggleMenu}>
+                        <RiGridFill color="white" size={30} />
+                    </div>
+
+
+                </>
+            }
+
+            <div style={{ position: "fixed", left: 15, top: 15 }}>
+                <img src="skewb-logo.PNG" alt="logo" style={{ width: 50 }} />
+            </div>
+
             {/* modal overlay */}
             <Overlay isOpen={isOpen} onClose={() => setIsOpen(!isOpen)} children={osContent} />
 
@@ -372,7 +403,7 @@ const ZoomAndSlide = () => {
             <BGAnimatedText paragraph={paragraph} isBtnClicked={isBtnClicked} />
 
             {/* Right Sidebar Menu */}
-            <RightSidebar sideMenuOpen={sideMenuOpen} setSideMenuOpen={setSideMenuOpen}/>
+            <RightSidebar sideMenuOpen={sideMenuOpen} setSideMenuOpen={setSideMenuOpen} />
         </motion.div>
     );
 };

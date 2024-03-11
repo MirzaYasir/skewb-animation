@@ -21,12 +21,25 @@
   font-style: normal;
 }
 
+@font-face {
+  font-family: 'Poppins';
+  src: url('../fonts/Poppins/Poppins-ExtraBold.ttf') format('truetype');
+  font-weight: 900;
+  /* Set the font weight to 300 for the light variant */
+  font-style: normal;
+}
+
+html{
+  zoom: 0.8;
+}
 
 body {
   margin: 0;
   font-family: 'Poppins' !important;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  overflow-y: hidden;
+  overflow-x: hidden;
 }
 
 .skewed-div-container {
@@ -87,11 +100,13 @@ body {
   z-index: 100;
   position: fixed;
   top: 0;
-  right: -350px; /* Start off-screen */
+  bottom: 0;
+  right: -360px; /* Start off-screen */
   width: 350px;
-  height: 100vh;
   background-color: rgb(255, 255, 255, 0.5);
   transition: right 0.3s ease;
+  margin: 10px !important;
+  border-radius: 10px;
 }
 
 .offcanvas.open {

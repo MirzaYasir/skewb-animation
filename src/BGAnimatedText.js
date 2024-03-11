@@ -22,10 +22,10 @@ const BGAnimatedText = ({ paragraph, isBtnClicked }) => {
                 <motion.div
                     key={index}
                     initial={{ opacity: 0.1, x: -100, color: "rgba(255, 255, 255, 0.3)" }}
-                    animate={{ opacity: 1, x: "100%", color: "rgba(255, 255, 255, 0.3)", transition: { duration: 20, repeat: Infinity, repeatType: "reverse" } }}
+                    animate={{ opacity: 1, x: "100%", color: "rgba(255, 255, 255, 0.3)", transition: { duration: 50, repeat: Infinity, repeatType: "reverse" } }}
                     style={{ position: "absolute", top: index * 100, left: 0 }}
                 >
-                    <h2 style={{ margin: 0, fontSize: 70, letterSpacing: 10 }}>{chunk}</h2>
+                    <h2 style={{ margin: 0, fontSize: 70, letterSpacing: 10, fontWeight: 600, marginBottom: 50 }}>{chunk}</h2>
                 </motion.div>
             ))}
         </div>
